@@ -42,9 +42,3 @@ The goal was to build an elegant, responsive, and feature-rich stopwatch using H
 - Creating interactive settings UI with JS
 - Handling keyboard events effectively
 
-## 🔧 Setup Instructions
-
-1. Clone the repository  
-```bash
-git clone https://github.com/your-username/stopwatch-app.git
-cd stopwatch-app
