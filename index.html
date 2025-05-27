@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive 3D Stopwatch App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Stopwatch</h1>
+        <div class="settings-icon" id="settingsIcon">⚙️</div>
+        
+        <div class="settings-panel" id="settingsPanel">
+            <div class="close-settings" id="closeSettings">✕</div>
+            <h3 class="settings-title">Settings</h3>
+            
+            <div class="setting-group">
+                <span class="setting-label">Theme</span>
+                <div class="theme-options">
+                    <div class="theme-option active" id="theme1" data-theme="theme1"></div>
+                    <div class="theme-option" id="theme2" data-theme="theme2"></div>
+                    <div class="theme-option" id="theme3" data-theme="theme3"></div>
+                    <div class="theme-option" id="theme4" data-theme="theme4"></div>
+                </div>
+            </div>
+            
+            <div class="setting-group">
+                <div class="switch-container">
+                    <span class="setting-label">Show milliseconds</span>
+                    <label class="switch">
+                        <input type="checkbox" id="showMilliseconds" checked>
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+            
+            <div class="setting-group">
+                <div class="switch-container">
+                    <span class="setting-label">Keyboard shortcuts</span>
+                    <label class="switch">
+                        <input type="checkbox" id="keyboardShortcuts" checked>
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+            
+            <div class="keyboard-shortcuts">
+                <div class="shortcut-title">Keyboard Shortcuts</div>
+                <div class="shortcut">
+                    <span>Start/Pause</span>
+                    <span class="key">Space</span>
+                </div>
+                <div class="shortcut">
+                    <span>Reset</span>
+                    <span class="key">R</span>
+                </div>
+                <div class="shortcut">
+                    <span>Lap</span>
+                    <span class="key">L</span>
+                </div>
+                <div class="shortcut">
+                    <span>Settings</span>
+                    <span class="key">S</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="time-display-container">
+            <svg class="progress-ring" width="300" height="300">
+                <circle id="progressRing" cx="150" cy="150" r="130" stroke="rgba(255, 255, 255, 0.1)" stroke-width="10" fill="none" />
+                <circle id="progressIndicator" cx="150" cy="150" r="130" stroke="var(--accent-color)" stroke-width="10" fill="none" stroke-dasharray="817" stroke-dashoffset="817" transform="rotate(-90 150 150)" />
+            </svg>
+            <div class="time-display" id="display">
+                <span id="timeValue">00:00:00</span><span class="milliseconds" id="msValue">.000</span>
+            </div>
+        </div>
+        
+        <div class="buttons-container">
+            <div class="buttons">
+                <button id="startBtn">▶ Start</button>
+                <button id="pauseBtn">⏸ Pause</button>
+            </div>
+            <div class="buttons">
+                <button id="resetBtn">↺ Reset</button>
+                <button id="lapBtn">⏱ Lap</button>
+            </div>
+        </div>
+        
+        <div class="laps-header">
+            <div class="laps-title">Lap Times</div>
+            <button class="clear-laps" id="clearLapsBtn">Clear All</button>
+        </div>
+        
+        <div class="laps-container" id="lapsContainer">
+            <!-- Lap times will appear here -->
+        </div>
+        
+        <div class="footer">
+            Click on the time to toggle millisecond display
+        </div>
+    </div>
+    
+    <div class="notification" id="notification"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
